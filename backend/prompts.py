@@ -64,16 +64,9 @@ def analysis():
 
         "incorrectWords": {
             "type": "array",
-            "description": "0-5 words that were pronounced incorrectly",
+            "description": "0-5 words that were pronounced incorrectly, each word being a pair of strings in an array, the first one representing the phones spoken (incorrectly) by the speaker and the second one representing the correct phones of the word. All phones should be given in the CMU-dict, uppercase letter format.",
             "minItems": 0,
             "maxItems": 5,
-            
-            "word": {
-                "type": "pair",
-                "description": "a pair of strings in an array, the first one representing the phones spoken (incorrectly) by the speaker and the second one representing the correct phones of the word.",
-                "minItems": 2,
-                "maxItems": 2
-            }
         }
     }
     """

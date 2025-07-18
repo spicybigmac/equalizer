@@ -52,11 +52,11 @@ const ResultsPage = ({ results, audioURL, onTryAgain }) => {
             <section className="results-section gradient-box">
                 <div className="results-grid">
                     <div className="summary-box">
-                        <h3><span role="img" aria-label="check mark">✅</span> Strengths</h3>
+                        <h3>Strengths</h3>
                         <p>{results.strengths}</p>
                     </div>
                     <div className="summary-box">
-                        <h3><span role="img" aria-label="light bulb">💡</span> Areas for Improvement</h3>
+                        <h3>Areas for Improvement</h3>
                         <p>{results.weaknesses}</p>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const ResultsPage = ({ results, audioURL, onTryAgain }) => {
 
             <section className="results-section gradient-box">
                  <div className="summary-box full-width">
-                    <h3><span role="img" aria-label="rocket">🚀</span> Your Personalized Next Steps</h3>
+                    <h3>Your Personalized Next Steps</h3>
                     <ol className="actionable-steps-list">
                         {results.nextSteps.map((step, index) => (
                             <li key={index}>{step}</li>
@@ -75,7 +75,7 @@ const ResultsPage = ({ results, audioURL, onTryAgain }) => {
 
             <section className="results-section gradient-box">
                  <div className="summary-box full-width">
-                    <h3><span role="img" aria-label="magnifying glass">🔍</span> Detailed Pronunciation Breakdown</h3>
+                    <h3>Detailed Pronunciation Breakdown</h3>
                     {results.incorrectWords && results.incorrectWords.length > 0 ? (
                         <table className="corrections-table">
                             <thead>

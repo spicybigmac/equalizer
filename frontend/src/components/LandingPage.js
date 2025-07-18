@@ -14,9 +14,9 @@ function LandingPage(props) {
                 {/* <div className="hero-icon">🎤</div> */}
                 <h1 className="main-title text-gradient">Perfect Your Pronunciation</h1>
                 <p className="subtitle">
-                    aaaaaa ai pronunciation tool placeholder subtitle
-                    <br />
-                    amongus
+                    Professional English pronunciation coaching, without the barriers.
+                    <br/>
+                    Equalizer makes perfecting your pronunciation is as easy as 1, 2, 3.
                 </p>
                 <div className="button-group">
                     <button className="cta-button" onClick={props.onNavigateToRecording}>Try It Free</button>
@@ -32,13 +32,13 @@ function LandingPage(props) {
                     <div className="features-grid">
                         <FeatureCard 
                             icon="" 
-                            title="Professional Analysis" 
-                            description="" 
+                            title="In-Depth Analysis" 
+                            description="Equalizer provides feedback for phoneme accuracy, fluency, intonation, and connection, giving you a score and actionable feedback for each." 
                         />
                         <FeatureCard 
                             icon="" 
                             title="Instant Feedback" 
-                            description="" 
+                            description="Get coaching whenever you want, wherever you are. Your language learning journey should belong to you." 
                         />
                         <FeatureCard 
                             icon="" 

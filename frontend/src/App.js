@@ -32,37 +32,18 @@ function App() {
         setAudioURL(url);
 
         try {
-            // const response = await fetch("http://127.0.0.1:8000/processAudio", {
-            //     method: "POST",
-            //     body: formData,
-            // });
+            const response = await fetch("http://127.0.0.1:8000/processAudio", {
+                method: "POST",
+                body: formData,
+            });
 
-            // if (!response.ok) {
-            //     const errorData = await response.json();
-                // throw new Error(errorData.detail || 'The link could not be processed.');
-            // }
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.detail || 'The link could not be processed.');
+            }
 
-            // const data = await response.json();
+            const data = await response.json();
 
-            const data = {
-              title: "SpeechAnalysisResult",
-              phonemeScore: 92,
-              fluencyScore: 78,
-              intonationScore: 85,
-              connectionScore: 65,
-              strengths: "Excellent clarity on vowel sounds like 'a' and 'o'. Your pacing is generally consistent and easy to follow.",
-              weaknesses: "You sometimes drop the final consonant in words ending with 't' or 'd'. Your speech connection could be improved by linking words more naturally.",
-              nextSteps: [
-                  "Practice words ending in 't' like 'test' and 'result' to ensure the final sound is articulated.",
-                  "To improve fluency, try to reduce filler words like 'um' when pausing to think.",
-                  "Focus on raising your pitch at the end of questions to sound more natural.",
-                  "Practice linking the final consonant of one word to the starting vowel of the next, like in 'an_apple'."
-              ],
-              incorrectWords: [
-                  ["W-IH-N", "W-IH-N-D"],
-                  ["R-EH-S", "R-EH-S-T"],
-              ]
-            };
             setResultsData(data);
             setView('results');
 
