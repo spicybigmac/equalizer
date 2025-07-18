@@ -12,7 +12,7 @@ def getAnalysis(audioFile):
     try:
         print("Analyzing...")
         res = client.models.generate_content(
-            model = "gemini-2.5-flash",
+            model = "gemini-2.5-pro",
             contents=[prompt, audio]
         )
         if not res.text:

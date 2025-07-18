@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
@@ -25,14 +25,27 @@ app.add_middleware(
 def greet():
     return {"message": "equalizer backend"}
 
+currentid = 0
+
 class ProcessRequest(BaseModel):
-    pass
+    file: UploadFile = File(...)
 
 @app.post("/processAudio")
-def processfunction(request: ProcessRequest):
+async def processfunction(request: ProcessRequest):
     audioFile = request.file
 
-    output = analysis.getAnalysis(audioFile)
+    path = f"./recordings/{currentid}"
+    currentid += 1
+
+    try:
+        with open(path, "w") as f:
+            f.write(await audioFile.read())
+    except:
+        raise HTTPException(422, "File Loading Failed.")
+
+    print(f"audio with id {currentid} saved")
+
+    output = analysis.getAnalysis(path)
     if (output == -1):
         raise HTTPException(404, "Pydantic Validation Failed.")
     elif (output == -2):
